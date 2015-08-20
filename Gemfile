@@ -21,6 +21,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'pry-rails'
+
+# React and Flux resources
+gem 'react-rails', '~> 1.0.0'
+
+gem 'flux-rails-assets'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
