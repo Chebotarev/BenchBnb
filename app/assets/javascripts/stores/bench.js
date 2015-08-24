@@ -22,8 +22,8 @@
 
     dispatcherId: AppDispatcher.register(function (payload) {
       if (payload.actionType === BenchConstants.BENCHES_RECEIVED) {
-        BenchStore.emit(CHANGE_EVENT);
         resetBenches(payload.benches);
+        BenchStore.emit(CHANGE_EVENT);
       }
     })
   });
