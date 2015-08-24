@@ -6,7 +6,6 @@ var Index = React.createClass({
 
   componentDidMount: function () {
     BenchStore.addChangeListener(this.handleChange);
-    ApiUtil.fetchBenches();
   },
 
   handleChange: function () {
