@@ -1,6 +1,6 @@
 $(document).ready(function () {
     React.render(
-      <Index benches={ BenchStore.all() }/>,
+      <Search/>,
       document.getElementById('content')
     );
   }
