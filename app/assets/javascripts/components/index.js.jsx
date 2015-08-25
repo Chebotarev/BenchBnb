@@ -14,11 +14,10 @@ var Index = React.createClass({
 
   render: function() {
     var benches = this.state.benches;
-    return <main>
-      <ul>{ benches.map(function (bench) {
-        return <li key={ bench.id }>{ bench.description }</li>
+    return <div className="list-group">{
+      benches.map(function (bench) {
+        return <IndexItem key={ bench.id } description={ bench.description } />
       })
-      }</ul>
-    </main>;
+    }</div>;
   }
 });

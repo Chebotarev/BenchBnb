@@ -1,5 +1,9 @@
 var Map = React.createClass({
 
+  getInitialState: function () {
+    return { markers: [] };
+  },
+
   componentDidMount: function(){
     var map = React.findDOMNode(this.refs.googlemap);
     var mapOptions = {
@@ -24,17 +28,28 @@ var Map = React.createClass({
       lng: LongLat.getSouthWest().K
     }
 
-    ApiUtil.fetchBenches({data: { bounds: {northEast: northEast, southWest: southWest }} });
+    ApiUtil.fetchBenches({ data:
+      { bounds:
+        { northEast: northEast, southWest: southWest }
+      }
+    });
   },
 
   handleChange: function () {
     var that = this;
+    
+    for (var i = 0; i < this.state.markers.length; i++) {
+      this.state.markers[i].setMap(null);
+    }
+
+    var marker;
     BenchStore.all().forEach(function (bench) {
-      new google.maps.Marker({
+      marker = new google.maps.Marker({
         position: {lat: bench.lat, lng: bench.lng},
         map: that.map,
         title: bench.description
       });
+      that.state.markers.push(marker);
     });
   },
 

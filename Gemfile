@@ -25,6 +25,7 @@ gem 'pry-rails'
 # React and Flux resources
 gem 'react-rails', '~> 1.0.0'
 
+gem 'bootstrap-sass'
 gem 'flux-rails-assets'
 
 # Use ActiveModel has_secure_password
